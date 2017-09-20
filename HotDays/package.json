@@ -7,8 +7,27 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@expo/react-native-action-sheet": "^1.0.1",
+		"axios": "^0.16.2",
+		"compare-versions": "^3.0.1",
+		"coordtransform": "^2.1.2",
+		"geolib": "^2.0.23",
+		"path": "^0.12.7",
 		"react": "16.0.0-alpha.12",
-		"react-native": "0.48.2"
+		"react-native": "0.48.2",
+		"react-native-animatable": "^1.2.3",
+		"react-native-gallery": "^0.0.17",
+		"react-native-image-picker": "^0.26.7",
+		"react-native-vector-icons": "^4.4.0",
+		"react-native-video": "^2.0.0",
+		"react-navigation": "^1.0.0-beta.11",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2",
+		"redux-logger": "^3.0.6",
+		"redux-persist": "^4.9.1",
+		"redux-thunk": "^2.2.0",
+		"url": "^0.11.0",
+		"validate.js": "^0.11.1"
 	},
 	"devDependencies": {
 		"babel-jest": "21.0.2",
