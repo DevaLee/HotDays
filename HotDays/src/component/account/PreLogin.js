@@ -6,7 +6,7 @@ import {View, Text, StatusBar} from 'react-native'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as actions from '../../actions'
-import common from '../common'
+import * as components from '../common'
 
  class PreLogin extends Component{
     static navigationOptions = {
@@ -23,29 +23,33 @@ import common from '../common'
         let {navigation} = this.props
 
         return(
-           <common.Layout
+           <components.Layout
                 screenId = {this.screenId}
                 containerStyle = {{justifyContent : 'center'}}
            >
                <StatusBar barStyle='dark-content'/>
-               <common.Image source={require('../../../res/Img/zqc-icon-middle.png')}
+               <components.Image source={require('../../../res/Img/zqc-icon-middle.png')}
                              style={{alignSelf : 'center', borderRadius: 15}}/>
-               <common.Button
+               <components.Button
                    text="登录"
-                   onPress={()=> {}}
+                   onPress={this.loginClick.bind(this)}
                    containerStyle={{marginTop : 100}}
                    textStyle={{fontSize : 16}}
                />
 
-               <common.Button
+               <components.Button
                    text="注册"
                    onPress={()=> {}}
                    containerStyle={{marginTop : 30}}
                    textStyle={{fontSize : 16}}
                />
 
-           </common.Layout>
+           </components.Layout>
         )
+    }
+
+    loginClick = () =>{
+        this.props.navigation.navigate('Login')
     }
 }
 

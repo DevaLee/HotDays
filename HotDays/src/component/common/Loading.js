@@ -12,9 +12,9 @@ import {COLOR} from '../../config'
 
 function Loading({loading, layout, iconColor = COLOR.textNormal,
                  iconSize = 'small', textStyle, containerStyle}) {
-    let {loadingCount, prompt, enable} = loading;
+    let {loadingCount, prompt, enabled} = loading;
     prompt = (prompt !== undefined ? prompt : '')
-    if(!enable || loadingCount < 0){
+    if(!enabled || loadingCount < 0){
         return null
     }
 

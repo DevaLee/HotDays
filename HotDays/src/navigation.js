@@ -11,7 +11,8 @@ import * as components  from './component'
 
 export const AppNavigator = StackNavigator(
     {
-        PreLogin : {screen : components.PreLogin}
+        PreLogin : {screen : components.PreLogin},
+        Login : {screen : components.Login}
     },
 
     {

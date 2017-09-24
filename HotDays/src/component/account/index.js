@@ -5,3 +5,5 @@
 export { default as PreLogin} from './PreLogin'
 
 export { default as EditProfile} from './EditProfile'
+
+export { default as Login} from './Login'

@@ -2,7 +2,13 @@
  * Created by ritamashin on 2017/9/19.
  */
 
+import Loading from './loading'
+import common from './common'
+import account from './account'
 
 
-export * from './account'
-export * from './loading'
+export default Apis = {
+    Loading,
+    common,
+    account,
+}

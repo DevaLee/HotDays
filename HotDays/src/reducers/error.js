@@ -7,41 +7,39 @@ const  initialState = {
 }
 
 export default (state = initialState, action) => {
+    let {screenId, error} = action;
     switch (action.type){
-        // case 'ERROR_INPUT' :
-        //     let {screenId, error} = action;
-        //     return {
-        //         ...state,
-        //         input: {
-        //             ...state.input,
-        //             [screenId] : {
-        //                 ...(state.input[screenId] === undefined ? {} : state.input[screenId]),
-        //                 ...error
-        //             }
-        //         }
-        //     }
-        // case 'RESET_ERROR_INPUT':
-        //     let {screenId} = action;
-        //     if (screenId === undefined){
-        //         return {
-        //             ...state,
-        //             input : initialState.input
-        //         }
-        //     }else {
-        //         return {
-        //             ...state,
-        //             input : {
-        //                 ...state.input,
-        //                 [screenId] : initialState.input[screenId] || {}
-        //             }
-        //         }
-        //     }
-        // case 'ERROR_FLASH':
-        //     let {error} = action;
-        //     return {
-        //         ...state,
-        //         flash: error
-        //     };
+        case 'ERROR_INPUT' :
+            return {
+                ...state,
+                input: {
+                    ...state.input,
+                    [screenId] : {
+                        ...(state.input[screenId] === undefined ? {} : state.input[screenId]),
+                        ...error
+                    }
+                }
+            }
+        case 'RESET_ERROR_INPUT':
+            if (screenId === undefined){
+                return {
+                    ...state,
+                    input : initialState.input
+                }
+            }else {
+                return {
+                    ...state,
+                    input : {
+                        ...state.input,
+                        [screenId] : initialState.input[screenId] || {}
+                    }
+                }
+            }
+        case 'ERROR_FLASH':
+            return {
+                ...state,
+                flash: error
+            };
         case 'RESET':
         case 'RESET_ERROR':
             return initialState;
