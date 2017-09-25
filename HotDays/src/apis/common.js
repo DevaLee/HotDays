@@ -32,14 +32,14 @@ export function requestApi(config) {
         })
 }
 
-export function getApi(url, params = {}, {headers = {}, timeOut = 3000,
-                           background = false, onDownloadProgress = {}}) {
+export function getApi(url, params = {}, {headers = {}, timeout = 3000,
+                           background = false, onDownloadProgress} = {}) {
     return requestApi({
         url,
         method: 'GET',
         params,
         headers,
-        timeOut,
+        timeout,
         background,
         onDownloadProgress
     })

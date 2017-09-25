@@ -31,11 +31,11 @@ export function validateInput(screenId, input, cbOk) {
 
         dispatch(actions.errorInput(screenId, error));
 
-        // if(Object.values(error).every(v => v.length === 0)){
-        //     if (cbOk){
-        //         cbOk()
-        //     }
-        // }
+        if(Object.values(error).every(v => v.length === 0)){
+            if (cbOk){
+                cbOk()
+            }
+        }
     }
 }
 
@@ -47,8 +47,8 @@ let accountConstrains ={
 
 let passwordConstrains = {
     length : {
-        minimum : 9,
-        message:'密码长度至少为9'
+        minimum : 6,
+        message:'密码长度至少为6'
     }
 }
 let constrains = {

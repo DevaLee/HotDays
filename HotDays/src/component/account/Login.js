@@ -44,7 +44,28 @@ class Login extends PureComponent{
 
       }
       submit(){
+            let {navigation, input, validateInput, login} = this.props;
+            validateInput(this.screenId, input[this.screenId], () =>{
+                let {account, password} = input[this.screenId];
+                let userName, mobile, email
+                if (account.match(/^\d+$/)){
+                    mobile = account;
+                }else if(account.match(/^.+ @.+ $/) !== null){
+                    email = account;
+                }else {
+                    userName = account;
+                }
 
+                login({
+                    userName,
+                    mobile,
+                    email,
+                    password,
+                    cbOk: user => {
+                        console.log('登录成功');
+                    }
+                })
+            })
       }
 
 
@@ -87,7 +108,7 @@ class Login extends PureComponent{
                     <components.ActionSheet
                         onPress={() =>{
                             dismissKeyboard()
-                            this.submit()
+                            this.submit();
                         }}
                         onLongPress={(showActionSheetWithOptions) => {
                             this.changeAppEnv(showActionSheetWithOptions)
